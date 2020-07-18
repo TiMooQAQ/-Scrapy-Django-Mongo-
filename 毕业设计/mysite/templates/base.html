@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ weather.city }}天气预报</title>
+    {% load static %}
+    <script src="{% static 'font_21opoobxm0s/iconfont.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <style type="text/css">
+        .juese{
+            display: flex;
+            float: left;
+            background: #172438;
+            width: 231px;
+            height: 60px;
+            border-radius: 86px;
+            margin: 9px auto;
+            cursor: pointer;
+            text-align: center;
+            color: white;
+        }
+        .juese a{
+            margin: auto auto;
+            text-decoration: none;
+            color: white;
+        }
+        .juese:hover{
+            transform: scale(1.15);
+            transition: 400ms ease;
+            text-align: center;
+            filter : invert(enabled=bEnabled);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+        <div class="today">
+        <div class="today_right">
+            <div class="qqq">
+                <div class="xx">紫外线：</div>
+                <div class="xxx">{% block 紫外线 %}{% endblock %}</div>
+                <div class="xx">湿度：</div>
+                <div class="xxx">{% block 湿度 %}{% endblock %}%</div>
+                <div class="xx">风向：</div>
+                <div class="xxx">{% block 风向 %}{% endblock %}</div>
+                <div class="xx">空气质量：</div>
+                <div class="xxx">{% block 空气质量 %}{% endblock %}</div>
+                <div class="xx" style="margin: 18px 68px;">{% block 温差 %}{% endblock %}</div>
+                <div href="http://120.79.60.28/" class="juese">
+                    <a href="http://120.79.60.28/">更换城市</a>
+                </div>
+            </div>
+        </div>
+    <div class="today_left">
+        <svg class="icon" aria-hidden="true">
+            {% block weather_css %}{% endblock %}
+        </svg>
+        <span>{% block 城市 %}{% endblock %}</span>
+        <span>{% block 温度 %}{% endblock %}°
+            <span>{% block 天气 %}{% endblock %}</span>
+        </span>
+    </div>
+    </div>
+</body>
+</html>

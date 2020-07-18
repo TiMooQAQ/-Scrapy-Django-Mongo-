@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>热门城市</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap-4.4.1-dist/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div>
+        <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">热门城市</li>
+  </ol>
+</nav>
+    </div>
+
+
+
+    {% for weather in weather%}
+        <a href="{{ weather.city }} " class="btn btn-info" style="margin: 11px -1px;">{{ weather.city}}</a>
+    {% endfor %}
+</body>
+</html>

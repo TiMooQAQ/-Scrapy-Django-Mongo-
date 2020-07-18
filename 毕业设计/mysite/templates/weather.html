@@ -1,0 +1,41 @@
+
+
+
+
+{% extends 'base.html'%}
+{% block 天气 %}{{ weather.tianqi }}{% endblock %}
+{% block 城市 %}{{ weather.city }}{% endblock %}
+{% block 风向 %}{{ weather.fengxiang}}{% endblock %}
+{% block 湿度 %}{{ weather.shidu }}{% endblock %}
+{% block 温度 %}{{ weather.wendu }}{% endblock %}
+{% block 紫外线 %}{{ weather.zwx }}{% endblock %}
+{% block 温差 %}{{ weather.wencha }}{% endblock %}
+{% block 空气质量 %}{{ weather.kqzl }}{% endblock %}
+
+
+
+{% block weather_css %}
+    {% if '晴' in weather.tianqi|slice:'0:1' %}<use xlink:href="#icon-qingtian"></use>
+    {% elif '暴雨' in weather.tianqi|slice:'0:2'  %}<use xlink:href="#icon-baoyu"></use>
+    {% elif '多云' in weather.tianqi|slice:'0:2' %}<use xlink:href="#icon-duoyun"></use>
+    {% elif '浮尘' in weather.tianqi|slice:'0:2'  %}<use xlink:href="#icon-fuchen"></use>
+    {% elif '雷阵雨' in weather.tianqi|slice:'0:3'  %}<use xlink:href="#icon-leizhenyu"></use>
+    {% elif '闪电' in weather.tianqi|slice:'0:2'  %}<use xlink:href="#icon-shandian"></use>
+    {% elif '少云' in weather.tianqi|slice:'0:2'  %}<use xlink:href="#icon-shaoyun"></use>
+    {% elif '特大雷震雨' in weather.tianqi|slice:'0:5'   %}<use xlink:href="#icon-tedaleizhenyu"></use>
+    {% elif '特大扬沙' in weather.tianqi|slice:'0:4'   %}<use xlink:href="#icon-tedayangsha"></use>
+    {% elif '雾' in weather.tianqi|slice:'0:1'   %}<use xlink:href="#icon-wu"></use>
+    {% elif '扬沙' in weather.tianqi|slice:'0:2'  %}<use xlink:href="#icon-yangsha"></use>
+    {% elif '小雨' in weather.tianqi|slice:'0:2'  %}<use xlink:href="#icon-xiaoyu"></use>
+    {% elif '阴' in weather.tianqi|slice:'0:1'   %}<use xlink:href="#icon-yintian"></use>
+    {% elif '暴雪' in weather.tianqi|slice:'0:2'   %}<use xlink:href="#icon-baoxue"></use>
+    {% elif '阵雨' in weather.tianqi|slice:'0:2'   %}<use xlink:href="#icon-zhenyu"></use>
+    {% elif '雨夹雪' in weather.tianqi|slice:'0:3'   %}<use xlink:href="#icon-yujiaxue"></use>
+    {% elif '中雪' in weather.tianqi|slice:'0:2'   %}<use xlink:href="#icon-zhongxue"></use>
+    {% elif '中雨' in weather.tianqi|slice:'0:2'   %}<use xlink:href="#icon-zhongyu"></use>
+    {% elif '大雨' in weather.tianqi|slice:'0:2'   %}<use xlink:href="#icon-dayu"></use>
+    {% endif %}
+{% endblock %}
+
+
+
