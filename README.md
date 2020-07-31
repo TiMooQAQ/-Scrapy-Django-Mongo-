@@ -4,13 +4,16 @@
 
 
 
-tinqi是爬虫
+tinqi是爬虫:
 
 用conda的py:
 
 库:
 
 scrapy        
+
+pymongo
+
 
 
 
